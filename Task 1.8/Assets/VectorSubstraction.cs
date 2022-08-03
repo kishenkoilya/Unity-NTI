@@ -10,19 +10,18 @@ public class VectorSubstraction : MonoBehaviour
     /// </summary>
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.blue;
         DrawVector(transform.position, V1.position);
-        Gizmos.color = Color.magenta;
+        Gizmos.color = Color.red;
         DrawVector(transform.position, V2.position);
-        Gizmos.color = Color.yellow;
-        DrawVector(transform.position, V1.position - V2.position);
-        Gizmos.color = Color.black;
-        DrawVector(V2.position, V1.position - V2.position);
+        Gizmos.color = Color.green;
+        DrawVector(transform.position, transform.position + V1.position - V2.position);
     }
 
     void DrawVector(Vector3 start, Vector3 destination) 
     {
-        Gizmos.DrawRay(start, destination);
+        Debug.Log("Substraction: " + start + "    " + destination);
+        Gizmos.DrawLine(start, destination);
         Gizmos.DrawWireSphere(destination, 0.1f);
     }
 }

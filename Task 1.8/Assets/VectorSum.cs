@@ -13,17 +13,18 @@ public class VectorSum : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        DrawVector(transform.position, V1.position);
+        DrawVector(transform.position, transform.position + V1.localPosition);
         Gizmos.color = Color.red;
-        DrawVector(transform.position, V2.position);
+        DrawVector(transform.position, transform.position + V2.localPosition);
         Gizmos.color = Color.green;
-        result = V1.position + V2.position;
+        result = transform.position + V1.localPosition + V2.localPosition;
         DrawVector(transform.position, result);
     }
 
     void DrawVector(Vector3 start, Vector3 destination) 
     {
-        Gizmos.DrawRay(start, destination);
+        Debug.Log(start + "    " + destination);
+        Gizmos.DrawLine(start, destination);
         Gizmos.DrawWireSphere(destination, 0.1f);
     }
 }

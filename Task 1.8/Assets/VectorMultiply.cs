@@ -11,16 +11,16 @@ public class VectorMultiply : MonoBehaviour
     /// </summary>
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.white;
+        Gizmos.color = Color.blue;
         DrawVector(transform.position, V1.position);
 
-        Gizmos.color = Color.gray;
-        DrawVector(transform.position, V1.position * modifier);
+        Gizmos.color = Color.green;
+        DrawVector(transform.position, transform.position + V1.localPosition * modifier);
     }
 
     void DrawVector(Vector3 start, Vector3 destination) 
     {
-        Gizmos.DrawRay(start, destination);
+        Gizmos.DrawLine(start, destination);
         Gizmos.DrawWireSphere(destination, 0.1f);
     }
 }

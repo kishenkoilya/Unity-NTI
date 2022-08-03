@@ -11,14 +11,18 @@ public class VectorDistance : MonoBehaviour
     /// </summary>
     void OnDrawGizmos()
     {
-        Gizmos.color = new Color(0.6f, 0, 0.6f, 1f);
+        Gizmos.color = Color.blue;
+        DrawVector(transform.position, transform.position + V1.localPosition);
+        Gizmos.color = Color.red;
+        DrawVector(transform.position, transform.position + V2.localPosition);
+        Gizmos.color = Color.green;
         result.position = new Vector3(0, Vector3.Distance(V1.position, V2.position), 0);
-        DrawVector(transform.position, result.position);
+        DrawVector(transform.position, transform.position + result.position);
     }
 
     void DrawVector(Vector3 start, Vector3 destination) 
     {
-        Gizmos.DrawRay(start, destination);
+        Gizmos.DrawLine(start, destination);
         Gizmos.DrawWireSphere(destination, 0.1f);
     }
 }
