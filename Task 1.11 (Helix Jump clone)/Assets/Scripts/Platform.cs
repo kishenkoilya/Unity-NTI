@@ -30,6 +30,8 @@ public class Platform : MonoBehaviour
             body.AddExplosionForce(500, transform.position + (Vector3.down / 2), 3);
         }
         platformDespawnTimer = 2;
+
+        GetComponent<AudioSource>().Play();
     }
     /// <summary>
     /// OnTriggerEnter is called when the Collider other enters the trigger.
