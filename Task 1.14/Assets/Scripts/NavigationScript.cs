@@ -6,11 +6,18 @@ using UnityEngine.AI;
 public class NavigationScript : MonoBehaviour
 {
     [SerializeField] private Transform Goal;
+    private NavMeshAgent Navi;
     // Start is called before the first frame update
     void Start()
     {
-        NavMeshAgent Navi = GetComponent<NavMeshAgent>();
-        Navi.destination = Goal.position;
+        Navi = GetComponent<NavMeshAgent>();
     }
 
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        Navi.destination = Goal.position;
+    }
 }
