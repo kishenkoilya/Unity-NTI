@@ -96,7 +96,6 @@ public class ScreenManager : MonoBehaviour
         // gameScreen.SetPanelStatus(true);
         if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
         {
-            gameScreen.ResetScore();
             score = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

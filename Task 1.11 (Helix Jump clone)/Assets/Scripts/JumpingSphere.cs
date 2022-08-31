@@ -8,15 +8,14 @@ public class JumpingSphere : MonoBehaviour
     [SerializeField] private Rigidbody sphereRigidBody;
     [SerializeField] private CameraMovement cameraMovement;
     [SerializeField] private int platformsPassedWithoutCollision;
-    [SerializeField] private AudioClip explosionClip;
-    private AudioSource audioSource;
+    [SerializeField] private Material SphereMaterial;
     private float timeTilDeath = 0;
 
     void Start()
     {
         screenManager = GameObject.Find("Canvas").GetComponent<ScreenManager>();
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        audioSource = GetComponent<AudioSource>();
+        SphereMaterial.SetFloat("_StepEdge", 0);
         screenManager.StartingProcedures();
     }
     void OnCollisionEnter(Collision other)
@@ -28,9 +27,6 @@ public class JumpingSphere : MonoBehaviour
                 p.ExplodePlatform();
             }
         }
-
-        audioSource.volume = 0.5f;
-        audioSource.Play();
 
         sphereRigidBody.Sleep();
         sphereRigidBody.WakeUp();
@@ -48,10 +44,9 @@ public class JumpingSphere : MonoBehaviour
     {
         // sphereRigidBody.Sleep();
         timeTilDeath = 1f;
-        
-        audioSource.clip = explosionClip;
-        audioSource.volume = 4;
-        audioSource.PlayDelayed(0.8f);
+        sphereRigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+        // AudioSource explosionSound = GetComponent<AudioSource>();
+        // explosionSound.PlayDelayed(0.8f);
     }
 
     public void Win()
@@ -66,12 +61,13 @@ public class JumpingSphere : MonoBehaviour
     {
         if (timeTilDeath > 0)
         {
-            gameObject.transform.localScale += Vector3.one * Time.deltaTime;
+            // gameObject.transform.localScale += Vector3.one * Time.deltaTime;
             timeTilDeath -= Time.deltaTime;
-            if (timeTilDeath < 0.5f)
-            {
-                sphereRigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
-            }
+            SphereMaterial.SetFloat("_StepEdge", 1 - timeTilDeath);
+            // if (timeTilDeath < 0.5f)
+            // {
+            //     sphereRigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+            // }
             if (timeTilDeath <= 0)
             {
                 screenManager.LoseGame();

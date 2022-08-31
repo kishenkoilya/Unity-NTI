@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 066b1bfdb9610844bb7455bf9e33468f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 11c0e93a9c56a8e4eaa5cb8a1ca39d53, type: 2}
+      objectReference: {fileID: 2100000, guid: 9638269df57eeb145987fb1caaddc2bd, type: 2}
     - target: {fileID: 919132149155446097, guid: 066b1bfdb9610844bb7455bf9e33468f, type: 3}
       propertyPath: m_Name
       value: sector_helix_jump Variant
