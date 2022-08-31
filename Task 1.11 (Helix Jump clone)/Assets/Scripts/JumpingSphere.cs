@@ -16,6 +16,7 @@ public class JumpingSphere : MonoBehaviour
         screenManager = GameObject.Find("Canvas").GetComponent<ScreenManager>();
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
         SphereMaterial.SetFloat("_StepEdge", 0);
+        SphereMaterial.SetFloat("_EmissionThickness", 0);
         screenManager.StartingProcedures();
     }
     void OnCollisionEnter(Collision other)
@@ -45,6 +46,7 @@ public class JumpingSphere : MonoBehaviour
         // sphereRigidBody.Sleep();
         timeTilDeath = 1f;
         sphereRigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+        SphereMaterial.SetFloat("_EmissionThickness", 0.05f);
         // AudioSource explosionSound = GetComponent<AudioSource>();
         // explosionSound.PlayDelayed(0.8f);
     }

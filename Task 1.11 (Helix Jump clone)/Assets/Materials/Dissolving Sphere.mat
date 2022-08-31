@@ -38,9 +38,11 @@ Material:
     - Vector1_96743a7edaf649e4a817aa41b48fed13: 0
     - _Edge1: 0
     - _Edge2: 1
+    - _EmissionThickness: 0.05
     - _NoiseScale: 100
-    - _StepEdge: 0.21233952
+    - _StepEdge: 1.0024344
     m_Colors:
+    - Color_297921cfbfe44f009a72c984303224d5: {r: 0.04907012, g: 1, b: 0, a: 0}
     - Color_81e1a6d6e18648a583d974130ce5ccec: {r: 1, g: 0.05929699, b: 0, a: 0}
     - Color_f7cec021228b4ae683f7122d536d507a: {r: 0.47789955, g: 0, b: 1, a: 0}
     - _ColorBottom: {r: 1, g: 0, b: 0, a: 0}
