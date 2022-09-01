@@ -17,7 +17,7 @@ public class Platform : MonoBehaviour
     /// </summary>
     void Start()
     {
-        // Sphere = GameObject.Find("Sphere");
+        
     }
     void Update()
     {
@@ -37,7 +37,7 @@ public class Platform : MonoBehaviour
             body.freezeRotation = false;
             body.AddExplosionForce(500, transform.position + (Vector3.down / 2), 3);
         }
-        platformDespawnTimer = 2;
+        platformDespawnTimer = 4;
     }
     /// <summary>
     /// OnTriggerEnter is called when the Collider other enters the trigger.
@@ -45,9 +45,7 @@ public class Platform : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
         if (other.gameObject != Sphere) {
-            Debug.Log(Sphere);
             return;
         }
 

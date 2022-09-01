@@ -9,12 +9,16 @@ public class JumpingSphere : MonoBehaviour
     [SerializeField] private CameraMovement cameraMovement;
     [SerializeField] private int platformsPassedWithoutCollision;
     [SerializeField] private Material SphereMaterial;
+    [SerializeField] private ParticleSystem rockets;
+    [SerializeField] private ParticleSystem deathPS;
     private float timeTilDeath = 0;
 
     void Start()
     {
         screenManager = GameObject.Find("Canvas").GetComponent<ScreenManager>();
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+        rockets = GameObject.Find("WinPS").GetComponent<ParticleSystem>();
+        deathPS = GameObject.Find("LosePS").GetComponent<ParticleSystem>();
         SphereMaterial.SetFloat("_StepEdge", 0);
         SphereMaterial.SetFloat("_EmissionThickness", 0);
         screenManager.StartingProcedures();
@@ -44,6 +48,8 @@ public class JumpingSphere : MonoBehaviour
     public void Death()
     {
         // sphereRigidBody.Sleep();
+        Debug.Log(deathPS);
+        deathPS.Play();
         timeTilDeath = 1f;
         sphereRigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
         SphereMaterial.SetFloat("_EmissionThickness", 0.05f);
@@ -54,6 +60,8 @@ public class JumpingSphere : MonoBehaviour
     public void Win()
     {
         sphereRigidBody.Sleep();
+        sphereRigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+        rockets.Play();
         screenManager.WinLevel();
     }
     /// <summary>
