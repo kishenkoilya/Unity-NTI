@@ -1449,6 +1449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -2912,6 +2914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -2981,6 +2985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -3236,6 +3242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -4311,6 +4319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -4863,6 +4873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -5376,6 +5388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -5760,6 +5774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -6047,6 +6063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -6246,6 +6264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -7754,6 +7774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -9049,6 +9071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -9187,6 +9211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 1
@@ -9377,6 +9403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -10265,6 +10293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0
@@ -10764,6 +10794,73 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4988484398011413875, guid: d37c7746356f01248abf461fd6f8ab48, type: 3}
   m_PrefabInstance: {fileID: 1900543334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1934496096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918779710521095, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251393785622466475, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+      propertyPath: m_Name
+      value: DestructionPS
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+--- !u!1 &1934496097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6251393785622466475, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+  m_PrefabInstance: {fileID: 1934496096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1934496098 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8711491642444994078, guid: 28edc8208504bfd42baac7d37e819fcf, type: 3}
+  m_PrefabInstance: {fileID: 1934496096}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1947608622
 PrefabInstance:
@@ -11517,6 +11614,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3cb1c07beb84180849bef2e9aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionGO: {fileID: 1934496097}
+  destructionPS: {fileID: 1934496098}
   Camera: {fileID: 829428373}
   Sphere: {fileID: 546326516}
   isFinish: 0

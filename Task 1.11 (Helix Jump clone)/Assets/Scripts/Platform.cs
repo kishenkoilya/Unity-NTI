@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-
+    [SerializeField] private GameObject destructionGO;
+    [SerializeField] private ParticleSystem destructionPS;
     [SerializeField] private CameraMovement Camera;
     [SerializeField] private GameObject Sphere;
     [SerializeField] public bool isFinish = false;
 
     private float platformDespawnTimer = 0;
-    // Update is called once per frame
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
-    {
-        
-    }
+
     void Update()
     {
         if (platformDespawnTimer > 0)
@@ -37,6 +30,10 @@ public class Platform : MonoBehaviour
             body.freezeRotation = false;
             body.AddExplosionForce(500, transform.position + (Vector3.down / 2), 3);
         }
+
+        destructionGO.transform.position = transform.position + Vector3.up * 0.2f;
+        destructionPS.Play();
+
         platformDespawnTimer = 4;
     }
     /// <summary>
