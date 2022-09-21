@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SnakeMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private float shiftSpeed = 5;
     [SerializeField] private float forwardSpeed = 1;
     [SerializeField] private ObjectsPool snakeBodiesPool;
+    [SerializeField] private TextMeshProUGUI snakeLengthText;
     private Vector3 previousHeadPosition;
     public float CollisionTimer = 0;
     [SerializeField] private GameObject Camera;
@@ -20,6 +22,7 @@ public class SnakeMovement : MonoBehaviour
         GetComponentsInChildren<Rigidbody>(bodyParts);
         previousHeadPosition = bodyParts[0].position;
         GetComponentsInChildren<MarkerManager>(bodyPartsMarkers);
+        snakeLengthText.text = "" + bodyParts.Count;
         foreach (MarkerManager mm in bodyPartsMarkers)
             mm.ClearMarkers();
     }  
@@ -97,6 +100,7 @@ public class SnakeMovement : MonoBehaviour
         snakeBodiesPool.ReturnObject(bodyParts[lastIndex].gameObject);
         bodyParts.RemoveAt(lastIndex);
         bodyPartsMarkers.RemoveAt(lastIndex);
+        snakeLengthText.text = "" + bodyParts.Count;
     }
 
     public void GrowBodyPart()
@@ -106,5 +110,6 @@ public class SnakeMovement : MonoBehaviour
         bodyPartRB.position = bodyParts[bodyParts.Count - 1].position;
         bodyParts.Add(bodyPartRB);
         bodyPartsMarkers.Add(bodyPart.gameObject.GetComponent<MarkerManager>());
+        snakeLengthText.text = "" + bodyParts.Count;
     }
 }
