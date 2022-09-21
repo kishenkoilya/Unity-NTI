@@ -30,11 +30,7 @@ public class SnakeMovement : MonoBehaviour
     {
         if (bodyParts.Count > 0)
         {
-            if (CollisionTimer <= 0)
-            {
-                bodyParts[0].velocity = Vector3.forward * forwardSpeed;
-            }
-            else
+            if (CollisionTimer > 0)
             {
                 CollisionTimer -= Time.deltaTime;
             }
@@ -67,8 +63,10 @@ public class SnakeMovement : MonoBehaviour
         float distance = Mathf.Abs(bodyParts[0].position.x - MousePositionX);
         shiftLerpT = shiftSpeed / distance;
 
-        float interpolatedX = Mathf.Lerp(bodyParts[0].position.x, MousePositionX, shiftLerpT * Time.deltaTime);
-        bodyParts[0].position = new Vector3(interpolatedX, bodyParts[0].position.y, bodyParts[0].position.z);
+        float interpolatedX = Mathf.Lerp(bodyParts[0].position.x, MousePositionX, shiftLerpT);
+        bodyParts[0].velocity = new Vector3((MousePositionX - bodyParts[0].position.x) * shiftSpeed, 0, CollisionTimer > 0 ? 0 : forwardSpeed);
+
+        // bodyParts[0].position = new Vector3(interpolatedX, bodyParts[0].position.y, bodyParts[0].position.z);
     }
     private void RotateHead()
     {
