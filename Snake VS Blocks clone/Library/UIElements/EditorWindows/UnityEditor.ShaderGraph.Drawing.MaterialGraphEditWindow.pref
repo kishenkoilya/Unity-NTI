@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Keys:
-  - __PanelContainer__rootVisualContainer__13eda5375b8cc664b8026251d1171541__MaterialGraphView__UnityEditor.Experimental.GraphView.GraphView+PersistedViewTransform
-  - __PanelContainer__rootVisualContainer__13eda5375b8cc664b8026251d1171541__MaterialGraphView__UnityEditor.Experimental.GraphView.GraphView+PersistedSelection
+  - __PanelContainer__rootVisualContainer__58795cb9bc968c843b85e41de2b3ff11__MaterialGraphView__UnityEditor.Experimental.GraphView.GraphView+PersistedViewTransform
+  - __PanelContainer__rootVisualContainer__58795cb9bc968c843b85e41de2b3ff11__MaterialGraphView__UnityEditor.Experimental.GraphView.GraphView+PersistedSelection
   m_Values:
-  - '{"position":{"x":1297.0,"y":435.0,"z":0.0},"scale":{"x":0.7561436891555786,"y":0.7561436891555786,"z":1.0}}'
-  - '{"m_Version":32,"m_SelectedElementsArray":[]}'
+  - '{"position":{"x":911.0,"y":191.0,"z":0.0},"scale":{"x":0.803787887096405,"y":0.803787887096405,"z":1.0}}'
+  - '{"m_Version":9,"m_SelectedElementsArray":[]}'

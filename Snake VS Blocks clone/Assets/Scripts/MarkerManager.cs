@@ -19,12 +19,16 @@ public class MarkerManager : MonoBehaviour
     }
 
     private Queue<Marker> Markers = new Queue<Marker>();
+    [SerializeField] public List<Vector3> positions = new List<Vector3>();
     private Vector3 lastAddedMarkerPosition;
+    public float totalDistance;
     // Start is called before the first frame update
     private void Start()
     {
         Markers.Enqueue(new Marker(transform.position, transform.rotation, 0));
         lastAddedMarkerPosition = transform.position;
+        positions.Add(transform.position);
+        totalDistance = 0;
     }
 
     // Update is called once per frame
@@ -37,23 +41,35 @@ public class MarkerManager : MonoBehaviour
     {
         float dist = (lastAddedMarkerPosition - transform.position).magnitude;
         Markers.Enqueue(new Marker(transform.position, transform.rotation, dist));
+        positions.Add(transform.position);
         lastAddedMarkerPosition = transform.position;
+        totalDistance += dist;
     }
 
-    private void ClearMarkers()
+    public void ClearMarkers()
     {
         Markers.Clear();
         Markers.Enqueue(new Marker(transform.position, transform.rotation, 0));
+        positions.Clear();
+        positions.Add(transform.position);
         lastAddedMarkerPosition = transform.position;
+        totalDistance = 0;
     }
 
     public Marker GetMarker()
     {
+        totalDistance -= Markers.Peek().distance;
+        positions.RemoveAt(0);
         return Markers.Dequeue();
     }
 
     public Marker PeekMarker()
     {
         return Markers.Peek();
+    }
+
+    public int GetCount()
+    {
+        return Markers.Count;
     }
 }
