@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -367,9 +367,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 26.744663, y: -19.123283, z: 0.8189186}
+    m_Target: {x: 49.047073, y: -18.997953, z: 2.757175}
     speed: 2
-    m_Value: {x: 26.744663, y: -19.123283, z: 0.8189186}
+    m_Value: {x: 49.047073, y: -18.997953, z: 2.757175}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -416,9 +416,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.3983429, y: -0.19802676, z: 0.08856526, w: -0.8912781}
+    m_Target: {x: -0.21301839, y: -0.47190338, z: 0.118672736, w: -0.8473306}
     speed: 2
-    m_Value: {x: -0.3983206, y: -0.19801566, z: 0.0885603, w: -0.89122814}
+    m_Value: {x: -0.21300541, y: -0.47187462, z: 0.11866551, w: -0.84727895}
   m_Size:
     m_Target: 32.108788
     speed: 2
@@ -475,9 +475,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7cc2ffff
-      m_LastClickedID: -15748
-      m_ExpandedIDs: 7aebffff52fbffff88430000f64300006c440000
+      m_SelectedIDs: a6440000
+      m_LastClickedID: 17574
+      m_ExpandedIDs: 52fbffffbc4300003c440000a6440000d4440000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -628,22 +628,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\illad\Unity\Unity-NTI\Task 1.14
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 78450000
-    m_LastClickedID: 17784
-    m_ExpandedIDs: 00000000de44000000ca9a3b
+    m_SelectedIDs: 7e450000
+    m_LastClickedID: 17790
+    m_ExpandedIDs: 000000004e45000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -671,7 +671,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de440000
+    m_ExpandedIDs: 000000004e450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
