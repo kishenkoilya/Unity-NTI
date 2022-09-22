@@ -32,7 +32,7 @@ public class MarkerManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         AddMarker();
     }
@@ -71,5 +71,11 @@ public class MarkerManager : MonoBehaviour
     public int GetCount()
     {
         return Markers.Count;
+    }
+
+    public void UpdateDistance(float distanceDelta)
+    {
+        // Markers.Peek().distance -= distanceDelta;
+        totalDistance -= distanceDelta;
     }
 }

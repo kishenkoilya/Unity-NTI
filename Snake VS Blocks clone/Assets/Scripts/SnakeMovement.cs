@@ -11,11 +11,13 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private float forwardSpeed = 1;
     [SerializeField] private ObjectsPool snakeBodiesPool;
     [SerializeField] private TextMeshProUGUI snakeLengthText;
+    [SerializeField] private int framesBetweenParts = 1;
+    [SerializeField] private float distanceBetweenParts = 2;
+    [SerializeField] private int beginningPartsCount = 5;
     private Vector3 previousHeadPosition;
     public float CollisionTimer = 0;
     [SerializeField] private GameObject Camera;
     float MousePositionX = 0;
-    private float shiftLerpT = 0;
     // Start is called before the first frame update
     private void Start()
     {
@@ -25,8 +27,12 @@ public class SnakeMovement : MonoBehaviour
         snakeLengthText.text = "" + bodyParts.Count;
         foreach (MarkerManager mm in bodyPartsMarkers)
             mm.ClearMarkers();
+        for (int i = 0; i < beginningPartsCount - 1; i++)
+        {
+            GrowBodyPart();
+        }
     }  
-    private void Update()
+    private void FixedUpdate()
     {
         if (bodyParts.Count > 0)
         {
@@ -45,10 +51,7 @@ public class SnakeMovement : MonoBehaviour
             {
                 for (int i = 1; i < bodyParts.Count; i++)
                 {
-                    if (bodyPartsMarkers[i-1].totalDistance > 1)
-                    {
-                        MoveBodyPart(i);
-                    }
+                    MoveBodyPart(i);
                 }
             }
         }
@@ -61,12 +64,8 @@ public class SnakeMovement : MonoBehaviour
             return;
         }
         float distance = Mathf.Abs(bodyParts[0].position.x - MousePositionX);
-        shiftLerpT = shiftSpeed / distance;
-
-        float interpolatedX = Mathf.Lerp(bodyParts[0].position.x, MousePositionX, shiftLerpT);
-        bodyParts[0].velocity = new Vector3((MousePositionX - bodyParts[0].position.x) * shiftSpeed, 0, CollisionTimer > 0 ? 0 : forwardSpeed);
-
-        // bodyParts[0].position = new Vector3(interpolatedX, bodyParts[0].position.y, bodyParts[0].position.z);
+        bodyParts[0].velocity = new Vector3((MousePositionX - bodyParts[0].position.x) * shiftSpeed, 0, 
+                                            CollisionTimer > 0 ? 0 : forwardSpeed);
     }
     private void RotateHead()
     {
@@ -76,11 +75,8 @@ public class SnakeMovement : MonoBehaviour
 
     private void MoveBodyPart(int index)
     {
-        while (bodyPartsMarkers[index - 1].totalDistance > 1)
+        while (bodyPartsMarkers[index - 1].totalDistance > distanceBetweenParts)
         {
-            if (bodyPartsMarkers[index - 1].GetCount() == 0)
-                break;
-
             MarkerManager.Marker marker = bodyPartsMarkers[index - 1].GetMarker();
             bodyParts[index].position = marker.position;
             bodyParts[index].rotation = marker.rotation;
@@ -104,8 +100,9 @@ public class SnakeMovement : MonoBehaviour
     public void GrowBodyPart()
     {
         GameObject bodyPart = snakeBodiesPool.GetObject();
+        bodyPart.transform.parent = bodyParts[0].transform.parent;
+        bodyPart.transform.position = bodyParts[bodyParts.Count - 1].gameObject.transform.position;
         Rigidbody bodyPartRB = bodyPart.GetComponent<Rigidbody>();
-        bodyPartRB.position = bodyParts[bodyParts.Count - 1].position;
         bodyParts.Add(bodyPartRB);
         bodyPartsMarkers.Add(bodyPart.gameObject.GetComponent<MarkerManager>());
         snakeLengthText.text = "" + bodyParts.Count;
