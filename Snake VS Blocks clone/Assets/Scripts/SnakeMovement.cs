@@ -11,7 +11,6 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private float forwardSpeed = 1;
     [SerializeField] private ObjectsPool snakeBodiesPool;
     [SerializeField] private TextMeshProUGUI snakeLengthText;
-    [SerializeField] private int framesBetweenParts = 1;
     [SerializeField] private float distanceBetweenParts = 2;
     [SerializeField] private int beginningPartsCount = 5;
     private Vector3 previousHeadPosition;
