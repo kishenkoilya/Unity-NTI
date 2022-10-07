@@ -7,8 +7,10 @@ public class CubeInteractions : MonoBehaviour
 {
     private TextMeshProUGUI cubeCountText;
     private Material cubeMaterial;
+    private AudioSource sound;
     [SerializeField] ObjectsPool cubesPool;
     [SerializeField] int cubeCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,7 @@ public class CubeInteractions : MonoBehaviour
         cubeMaterial = GetComponent<Renderer>().material;
         SetCounter();
         cubesPool = GameObject.Find("CubesPool").GetComponent<ObjectsPool>();
+        sound = GetComponent<AudioSource>();
     }
 
     private void SetCounter()
@@ -28,6 +31,7 @@ public class CubeInteractions : MonoBehaviour
         SnakeMovement sm = other.collider.GetComponentInParent<SnakeMovement>();
         if (sm)
         {
+            sound.Play();
             sm.CollisionTimer = 0.3f;
             sm.pushHeadBack();
             sm.DestroyBodyPart();

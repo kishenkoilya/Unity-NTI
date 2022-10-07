@@ -17,9 +17,9 @@ public class ObjectsPool : MonoBehaviour
 
     public void ReturnObject(GameObject obj)
     {
-        obj.gameObject.SetActive(false);
+        // obj.gameObject.SetActive(false);
         obj.transform.SetParent(gameObject.transform);
-        obj.transform.position = Vector3.zero;
+        obj.transform.localPosition = Vector3.zero;
         objects.Add(obj);
     }
 
