@@ -6,10 +6,16 @@ using TMPro;
 
 public class GameScreen : ScreenScript
 {
-    [SerializeField] TextMeshProUGUI currentLevelText; 
-    [SerializeField] TextMeshProUGUI nextLevelText; 
+    [SerializeField] private TextMeshProUGUI currentLevelText; 
+    [SerializeField] private TextMeshProUGUI nextLevelText; 
+    [SerializeField] private TextMeshProUGUI scoreTMP;
+    [SerializeField] private TextMeshProUGUI levelCompletedText;
+    private int score = 0;
     [SerializeField] Slider levelProgress;
 
+    private void Start() {
+        scoreTMP.text = "" + score;
+    }
     public void SetLevelTexts(int Level)
     {
         currentLevelText.text = "" + Level;
@@ -19,5 +25,22 @@ public class GameScreen : ScreenScript
     public void SetLevelProgress(float progress)
     {
         levelProgress.value = progress;
+    }
+
+    public void AddToScore(int points = 1)
+    {
+        score += points;
+        scoreTMP.text = "" + score;
+    }
+    
+    public void SetLevelCompleted(int level)
+    {
+        levelCompletedText.gameObject.SetActive(true);
+        levelCompletedText.text = "Level " + level + " COMPLETED!";
+    }
+
+    public void DeactivateLevelCompletedText()
+    {
+        levelCompletedText.gameObject.SetActive(false);
     }
 }
