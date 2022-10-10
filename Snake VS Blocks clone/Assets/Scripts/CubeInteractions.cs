@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class CubeInteractions : MonoBehaviour
 {
     private TextMeshProUGUI cubeCountText;
@@ -20,7 +21,6 @@ public class CubeInteractions : MonoBehaviour
         cubesPool = GameObject.Find("CubesPool").GetComponent<ObjectsPool>();
         sound = GetComponent<AudioSource>();
     }
-
     private void SetCounter()
     {
         cubeCountText.text = "" + cubeCount;

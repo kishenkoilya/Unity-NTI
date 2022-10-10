@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[ExecuteInEditMode]
 public class FoodInteractions : MonoBehaviour
 {
     private TextMeshProUGUI foodCountText;
@@ -18,6 +19,9 @@ public class FoodInteractions : MonoBehaviour
         sound = GetComponent<AudioSource>();
     }
 
+    private void Update() {
+        foodCountText.text = "" + foodCount;
+    }
     void OnTriggerEnter(Collider other)
     {
         SnakeMovement snake = other.GetComponentInParent<SnakeMovement>();
