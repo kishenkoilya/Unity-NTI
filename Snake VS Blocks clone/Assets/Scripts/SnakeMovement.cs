@@ -7,6 +7,7 @@ public class SnakeMovement : MonoBehaviour
 {
     [SerializeField] private List<Rigidbody> bodyParts = new List<Rigidbody>();
     [SerializeField] private List<MarkerManager> bodyPartsMarkers = new List<MarkerManager>();
+    [SerializeField] private ParticleSystem collisionPS;
     [SerializeField] private float shiftSpeed = 5;
     [SerializeField] private float forwardSpeed = 1;
     [SerializeField] private ObjectsPool snakeBodiesPool;
@@ -15,6 +16,7 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private int beginningPartsCount = 5;
     private Vector3 previousHeadPosition;
     public float CollisionTimer = 0;
+    public bool finished = false;
     [SerializeField] private GameObject Camera;
     float MousePositionX = 0;
     // Start is called before the first frame update
@@ -33,6 +35,10 @@ public class SnakeMovement : MonoBehaviour
     }  
     private void FixedUpdate()
     {
+        if (finished)
+        {
+            return;
+        }
         if (bodyParts.Count > 0)
         {
             if (CollisionTimer > 0)
@@ -105,5 +111,16 @@ public class SnakeMovement : MonoBehaviour
         bodyParts.Add(bodyPartRB);
         bodyPartsMarkers.Add(bodyPart.gameObject.GetComponent<MarkerManager>());
         snakeLengthText.text = "" + bodyParts.Count;
+    }
+
+    public void PlayParticleSystem()
+    {
+        collisionPS.Play();
+    }
+
+    public void Finish()
+    {
+        bodyParts[0].velocity = Vector3.zero;
+        finished = true;
     }
 }

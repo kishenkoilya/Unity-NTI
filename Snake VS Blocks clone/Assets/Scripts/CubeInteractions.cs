@@ -32,6 +32,7 @@ public class CubeInteractions : MonoBehaviour
         if (sm)
         {
             sound.Play();
+            sm.PlayParticleSystem();
             sm.CollisionTimer = 0.3f;
             sm.pushHeadBack();
             sm.DestroyBodyPart();
