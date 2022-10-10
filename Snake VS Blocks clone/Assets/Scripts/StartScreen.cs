@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class StartScreen : ScreenScript
@@ -12,22 +13,21 @@ public class StartScreen : ScreenScript
     // Start is called before the first frame update
     void Start()
     {
+        slider.minValue = 1;
+        slider.maxValue = SceneManager.sceneCountInBuildSettings + 1;
         chosenLevel = (int)slider.value;
     }
 
     public void ChooseLevel()
     {
+        Debug.Log("ddd");
         chosenLevel = (int)slider.value;
         chosenLevelText.text = "" + chosenLevel;
     }
 
     public void StartLevel()
     {
-        Debug.Log("Level " + chosenLevel + " started!");
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("ddd");
+        SceneManager.LoadScene(chosenLevel);
     }
 }
