@@ -14,20 +14,18 @@ public class StartScreen : ScreenScript
     void Start()
     {
         slider.minValue = 1;
-        slider.maxValue = SceneManager.sceneCountInBuildSettings + 1;
+        slider.maxValue = SceneManager.sceneCountInBuildSettings - 1;
         chosenLevel = (int)slider.value;
     }
 
     public void ChooseLevel()
     {
-        Debug.Log("ddd");
         chosenLevel = (int)slider.value;
         chosenLevelText.text = "" + chosenLevel;
     }
 
     public void StartLevel()
     {
-        Debug.Log("ddd");
         SceneManager.LoadScene(chosenLevel);
     }
 }

@@ -9,7 +9,6 @@ public class GameScreen : ScreenScript
     [SerializeField] private TextMeshProUGUI currentLevelText; 
     [SerializeField] private TextMeshProUGUI nextLevelText; 
     [SerializeField] private TextMeshProUGUI scoreTMP;
-    [SerializeField] private TextMeshProUGUI levelCompletedText;
     private int score = 0;
     [SerializeField] Slider levelProgress;
 
@@ -31,16 +30,5 @@ public class GameScreen : ScreenScript
     {
         score += points;
         scoreTMP.text = "" + score;
-    }
-    
-    public void SetLevelCompleted(int level)
-    {
-        levelCompletedText.gameObject.SetActive(true);
-        levelCompletedText.text = "Level " + level + " COMPLETED!";
-    }
-
-    public void DeactivateLevelCompletedText()
-    {
-        levelCompletedText.gameObject.SetActive(false);
     }
 }

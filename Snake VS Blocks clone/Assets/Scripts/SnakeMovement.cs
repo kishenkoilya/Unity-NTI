@@ -5,6 +5,7 @@ using TMPro;
 
 public class SnakeMovement : MonoBehaviour
 {
+    [SerializeField] private ScreenManager screenManager;
     [SerializeField] private List<Rigidbody> bodyParts = new List<Rigidbody>();
     [SerializeField] private List<MarkerManager> bodyPartsMarkers = new List<MarkerManager>();
     [SerializeField] private ParticleSystem collisionPS;
@@ -20,8 +21,9 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private GameObject Camera;
     float MousePositionX = 0;
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
+        screenManager = GameObject.Find("PlayerUI").GetComponent<ScreenManager>();
         GetComponentsInChildren<Rigidbody>(bodyParts);
         previousHeadPosition = bodyParts[0].position;
         GetComponentsInChildren<MarkerManager>(bodyPartsMarkers);
@@ -59,6 +61,7 @@ public class SnakeMovement : MonoBehaviour
                     MoveBodyPart(i);
                 }
             }
+            screenManager.SetLevelProgress(bodyParts[0].position.z);
         }
     }
 
@@ -100,6 +103,10 @@ public class SnakeMovement : MonoBehaviour
         bodyParts.RemoveAt(lastIndex);
         bodyPartsMarkers.RemoveAt(lastIndex);
         snakeLengthText.text = "" + bodyParts.Count;
+        if (bodyParts.Count == 0)
+        {
+            screenManager.Lose();
+        }
     }
 
     public void GrowBodyPart()

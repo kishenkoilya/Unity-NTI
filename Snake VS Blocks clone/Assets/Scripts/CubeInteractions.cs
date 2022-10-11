@@ -6,11 +6,12 @@ using TMPro;
 
 public class CubeInteractions : MonoBehaviour
 {
+    [SerializeField] ObjectsPool cubesPool;
+    [SerializeField] ScreenManager screenManager;
+    [SerializeField] int cubeCount = 0;
     private TextMeshProUGUI cubeCountText;
     private Material cubeMaterial;
     private AudioSource sound;
-    [SerializeField] ObjectsPool cubesPool;
-    [SerializeField] int cubeCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class CubeInteractions : MonoBehaviour
         SetCounter();
         cubesPool = GameObject.Find("CubesPool").GetComponent<ObjectsPool>();
         sound = GetComponent<AudioSource>();
+        screenManager = GameObject.Find("PlayerUI").GetComponent<ScreenManager>();
     }
     private void SetCounter()
     {
@@ -31,6 +33,7 @@ public class CubeInteractions : MonoBehaviour
         SnakeMovement sm = other.collider.GetComponentInParent<SnakeMovement>();
         if (sm)
         {
+            screenManager.AddToScore();
             sound.Play();
             sm.PlayParticleSystem();
             sm.CollisionTimer = 0.3f;
