@@ -14,6 +14,7 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private FinishInteraction finish;
     [SerializeField] private int levelNumber;
     [SerializeField] private int score = 0;
+    [SerializeField] private int defaultSnakeLength = 4;
     private float levelLength = 0;
 
     // Start is called before the first frame update
@@ -24,6 +25,11 @@ public class ScreenManager : MonoBehaviour
             currentLevel = GameObject.Find("Level");
             snake = currentLevel.GetComponentInChildren<SnakeMovement>();
             finish = currentLevel.GetComponentInChildren<FinishInteraction>();
+            snake.SetSnakeLength(PlayerPrefs.GetInt("Snake length", defaultSnakeLength));
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Snake length", defaultSnakeLength);
         }
     }
     void Start()
@@ -77,7 +83,9 @@ public class ScreenManager : MonoBehaviour
         loseScreen.DeactivateScreen();
         gameScreen.ActivateScreen();
         winScreen.ActivateScreen();
+        winScreen.ChangeLevelCompletedText(levelNumber);
         SetHighScore();
+        PlayerPrefs.SetInt("Snake length", snake.GetSnakeLength());
     }
 
     public void Lose()

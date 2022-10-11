@@ -30,11 +30,24 @@ public class SnakeMovement : MonoBehaviour
         snakeLengthText.text = "" + bodyParts.Count;
         foreach (MarkerManager mm in bodyPartsMarkers)
             mm.ClearMarkers();
+    }  
+
+    private void Start() 
+    {
         for (int i = 0; i < beginningPartsCount - 1; i++)
         {
             GrowBodyPart();
-        }
-    }  
+        }    
+    }
+    public void SetSnakeLength(int length)
+    {
+        beginningPartsCount = length;
+    }
+
+    public int GetSnakeLength()
+    {
+        return bodyParts.Count;
+    }
     private void FixedUpdate()
     {
         if (finished)

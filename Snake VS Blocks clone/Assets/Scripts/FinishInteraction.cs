@@ -12,7 +12,6 @@ public class FinishInteraction : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other) {
         SnakeMovement snake = other.transform.parent.GetComponent<SnakeMovement>();
-            Debug.Log("1");
         if (snake)
         {
             Debug.Log("1");

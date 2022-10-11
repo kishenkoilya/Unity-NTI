@@ -5,12 +5,10 @@ using TMPro;
 
 public class WinScreen : ScreenScript
 {
-    [SerializeField] TextMeshProUGUI currentScoreText;
-    [SerializeField] TextMeshProUGUI highScoreText;
+    [SerializeField] TextMeshProUGUI levelCompletedText;
 
-    public void SetScores(int score, int highScore)
+    public void ChangeLevelCompletedText(int level)
     {
-        currentScoreText.text = "" + score;
-        highScoreText.text = "high score:\n" + highScore;
+        levelCompletedText.text = "Level " + level + "\nCOMPLETED!";
     }
 }
